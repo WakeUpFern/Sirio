@@ -222,7 +222,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   /* ------------------------------------------------------------- chat */
 
-  const messages = byThread[threadId] ?? [];
+  const messages = useMemo(() => byThread[threadId] ?? [], [byThread, threadId]);
   const busy = busyIds.length > 0;
 
   const finishReply = useCallback((tid: string, mid: string, replyN: number) => {

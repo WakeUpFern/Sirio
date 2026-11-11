@@ -143,7 +143,7 @@ function NeedsCard() {
 
 function StepRow({ name, done, next }: { name: string; done: boolean; next?: boolean }) {
   return (
-    <li className="flex h-[31px] items-center gap-2.5 rounded-[9px] bg-white/75 px-2.5 text-[12.5px]">
+    <li className="flex h-[28px] items-center gap-2.5 rounded-[9px] bg-white/75 px-2.5 text-[12.5px]">
       {done ? (
         <span className="grid h-[17px] w-[17px] shrink-0 place-items-center rounded-full bg-ok text-white">
           <Check size={11} strokeWidth={3} aria-hidden="true" />
@@ -186,7 +186,7 @@ function NextStepsCard() {
           ))}
         </div>
       </div>
-      <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+      <div className="mt-2.5 flex items-center justify-between text-[12px] font-semibold">
         <span>Preparar</span>
         <span className="mono font-normal text-ink-3">{prepDone} de {STEPS_PREP.length}</span>
       </div>
@@ -195,7 +195,7 @@ function NextStepsCard() {
           <StepRow key={s.name} name={s.name} done={s.done} next={i === firstOpenPrep} />
         ))}
       </ul>
-      <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+      <div className="mt-2.5 flex items-center justify-between text-[12px] font-semibold">
         <span>Lanzar</span>
         <span className="mono font-normal text-ink-3">{launchCount} de {launch.length}</span>
       </div>
@@ -215,7 +215,7 @@ function DoneCard() {
         {DONE_BY_SIRIO.map((d) => {
           const Icon = DONE_ICON[d.icon];
           return (
-            <li key={d.name} className="flex items-center gap-3 rounded-[10px] bg-white/75 px-2.5 py-1.5">
+            <li key={d.name} className="flex items-center gap-3 rounded-[10px] bg-white/75 px-2.5 py-1">
               <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[9px] border border-line bg-white text-ink-2">
                 <Icon size={15} strokeWidth={1.6} aria-hidden="true" />
               </span>
@@ -231,7 +231,7 @@ function DoneCard() {
 
 function ReachCard() {
   const W = 340;
-  const H = 120;
+  const H = 70;
   const max = 900;
   const pts = REACH.map((v, i) => [(i / (REACH.length - 1)) * W, H - 6 - (v / max) * (H - 14)] as const);
   // Curva suave con puntos de control en horizontal.
@@ -244,17 +244,17 @@ function ReachCard() {
   }
   const total = REACH.reduce((a, b) => a + b, 0);
   return (
-    <GlassCard title="Alcance" className="@3xl:col-span-7">
-      <div className="flex h-full items-end justify-between gap-6">
+    <GlassCard title="Alcance" className="@3xl:col-span-4">
+      <div className="flex h-full flex-col justify-between gap-3">
         <div>
           <p className="text-[12px] text-ink-2">Últimos 7 días</p>
-          <p className="text-[38px] font-medium leading-none tracking-tight">{total.toLocaleString("en-US")}</p>
+          <p className="text-[34px] font-medium leading-none tracking-tight">{total.toLocaleString("en-US")}</p>
           <p className="mt-1.5 text-[12px] text-ink-2">
             cuentas alcanzadas · <span className="font-semibold text-ink">+18 %</span> vs. la semana pasada
           </p>
         </div>
-        <div className="min-w-0 max-w-[340px] flex-1">
-          <svg viewBox={`0 0 ${W} ${H}`} className="block h-[120px] w-full" role="img" aria-label="Alcance diario de los últimos 7 días, en aumento">
+        <div className="min-w-0">
+          <svg viewBox={`0 0 ${W} ${H}`} className="block h-[70px] w-full" role="img" aria-label="Alcance diario de los últimos 7 días, en aumento">
             <defs>
               <linearGradient id="reach-fill" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stopColor="#0B1220" stopOpacity="0.14" />
@@ -278,13 +278,13 @@ function ReachCard() {
 
 function ResultsCard() {
   return (
-    <GlassCard title="Resultados" className="@3xl:col-span-12">
-      <div className="grid grid-cols-1 divide-y divide-black/[0.07] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+    <GlassCard title="Resultados" className="@3xl:col-span-3">
+      <div className="flex h-full flex-col justify-between divide-y divide-black/[0.07]">
         {RESULTS.map((r, i) => (
-          <div key={r.label} className={`py-1.5 sm:py-0 ${i === 0 ? "sm:pr-6" : "sm:px-6"}`}>
+          <div key={r.label} className={`py-2 ${i === 0 ? "pt-0" : ""} ${i === RESULTS.length - 1 ? "pb-0" : ""}`}>
             <p className="text-[12px] text-ink-2">{r.label}</p>
             <p className="mt-1 flex items-baseline gap-2">
-              <span className="text-[28px] font-medium leading-none tracking-tight">{r.value}</span>
+              <span className="text-[24px] font-medium leading-none tracking-tight">{r.value}</span>
               <span className="mono text-ok">{r.delta}</span>
             </p>
           </div>
