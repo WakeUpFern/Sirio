@@ -12,5 +12,7 @@ Cada decisión que ya se tomó, con su porqué, para no volver a discutirla sin 
 | D6 | 2026-11-12 | Todo lo que sale al público pasa por aprobación humana | La inyección de instrucciones en contenido externo no tiene solución confiable. El nivel de efecto de cada herramienta se define en el código | Recomendado, sin objeción |
 | D7 | 2026-11-16 | Fernando es el responsable técnico y el equipo inicial es de cuatro personas | Hace falta una persona que revise y fusione cada cambio | Decidido por Fernando |
 | D8 | 2026-11-16 | La especificación vive en el repo como documentos cortos y un backlog, no como un SRS | Un SRS largo se desactualiza. Los documentos cortos los leen igual personas y agentes | Propuesto en este PR |
+| D9 | 2026-11-16 | Los agentes que construyen Sirio usan Opus con el nivel de esfuerzo según la complejidad; no se usa Fable | Fable solo está disponible por API. Un solo modelo con esfuerzo variable es más simple de operar que varios modelos | Decidido por Fernando |
+| D10 | 2026-11-17 | No se construye un control de versiones propio para el contexto del modelo | El modelo no guarda estado entre llamadas, así que no se le puede enviar solo lo nuevo. El ahorro viene del caché de prefijo, de editar con parches y de leer bajo demanda. Las versiones se guardan en Postgres para las personas | Propuesto en este PR |
 
 "Recomendado, sin objeción" significa que se propuso en el documento de dirección y nadie lo ha cuestionado. Si alguien no está de acuerdo, este es el lugar para decirlo.

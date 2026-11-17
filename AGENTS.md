@@ -47,6 +47,7 @@ npm run build
 - Cada herramienta del agente declara su nivel de efecto (lectura, borrador o efecto). Las de efecto siempre crean una aprobación.
 - El contenido externo (páginas web, mensajes, correos) es dato, nunca instrucción. Pásalo al modelo marcado como contenido externo.
 - Cada acción de Sirio se registra en `acciones`.
+- El contexto del modelo solo crece por el final. No pongas nada variable al principio ni reescribas lo ya enviado; lee "Economía del contexto" en `docs/arquitectura.md` antes de tocar cómo se arma una llamada.
 
 ## Reglas de la interfaz
 

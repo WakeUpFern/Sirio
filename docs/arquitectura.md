@@ -68,6 +68,23 @@ El chat no es la memoria. Antes de cada respuesta, el servidor arma el contexto 
 
 Un hilo nuevo recibe los puntos 1 a 4 y nada de otros hilos. Cuando un hilo supera un tamaño definido, sus mensajes antiguos se sustituyen por un resumen. Al archivar un hilo, Sirio propone notas para `memoria` y una persona las confirma.
 
+## Economía del contexto
+
+El modelo no recuerda nada entre una llamada y otra: cada turno recibe completo todo lo que necesita saber. No es posible enviarle solo lo nuevo. Lo que sí se puede es pagar casi nada por lo que se repite y no cargar lo que no hace falta. Por eso Sirio no construye un control de versiones propio para el contexto; aplica estas seis reglas.
+
+1. **El contexto solo crece por el final.** Los proveedores guardan en caché el inicio de la solicitud si es idéntico byte por byte al de la llamada anterior, y lo cobran a una fracción del precio normal. Cualquier cambio en medio invalida el caché de todo lo que sigue. El orden de armado va de lo más estable a lo más cambiante: instrucciones, herramientas, ficha, objetivo, memoria, hilo.
+2. **Nada variable al principio.** Ni la hora, ni identificadores de solicitud, ni listas en orden distinto. Lo que cambia en cada turno va al final.
+3. **Los cambios se anuncian, no se reescriben.** Si la ficha cambia a mitad de un hilo, no se sustituye el texto anterior: se agrega al final una nota con la diferencia. Aquí sí sirve la idea de mostrar solo lo que cambió.
+4. **Sirio edita con parches.** Para cambiar un guion o un documento, el agente usa una herramienta que sustituye un fragmento, en lugar de volver a escribir el texto completo. La salida es lo más caro y lo más lento, y aquí está el mayor ahorro.
+5. **Leer bajo demanda.** Los documentos largos, las piezas anteriores y los hilos viejos no entran al contexto. El agente tiene herramientas para buscarlos y leer la parte que necesita.
+6. **Resumir y delegar.** Un hilo largo se compacta en un resumen. Una lectura pesada, como analizar un sitio web, la hace una llamada aparte que devuelve solo su conclusión.
+
+Las versiones sí se guardan, pero en Postgres y para las personas: la ficha y las piezas conservan su historial para ver qué cambió, quién lo cambió y poder volver atrás.
+
+Cada llamada registra cuántos tokens entraron, cuántos se leyeron de caché y cuántos salieron. Si la lectura de caché es cero en turnos seguidos de un mismo hilo, algo está rompiendo la regla 1 y hay que encontrarlo.
+
+Referencia de precios de Claude al 17 de noviembre de 2026: la lectura de caché cuesta entre 5 % y 10 % del precio normal de entrada según el modelo, la escritura cuesta 25 % más, y el caché dura cinco minutos renovables con cada uso, o una hora si se paga el doble al escribir. Otros proveedores tienen mecanismos parecidos con otras cifras.
+
 ## Herramientas y niveles de efecto
 
 Cada herramienta que el agente puede usar declara uno de tres niveles:

@@ -122,7 +122,9 @@ Cubre parte de F3.
 - Cada turno arma el contexto en el orden que define `arquitectura.md`: instrucciones, ficha, objetivo, memoria, hilo.
 - Las instrucciones de Sirio viven en un archivo versionado del repo.
 - Un hilo nuevo no recibe mensajes de otros hilos; una prueba lo verifica.
-- Si la ficha cambia, el siguiente turno ya usa la nueva.
+- Si la ficha cambia, el siguiente turno ya usa la nueva: los hilos nuevos la reciben completa y los hilos en curso reciben una nota con la diferencia al final.
+- El contexto se arma de lo más estable a lo más cambiante, y cada llamada registra tokens de entrada, de caché y de salida.
+- Una prueba verifica que dos turnos seguidos de un mismo hilo comparten el mismo inicio byte por byte.
 
 Depende de: M1-1 y M1-2.
 

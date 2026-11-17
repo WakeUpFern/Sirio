@@ -1,6 +1,6 @@
 # Sirio: equipo, roles y ritmo
 
-Cómo trabajamos para que Sirio avance cada semana. El equipo inicial es de cuatro personas, con agentes de IA haciendo la mayor parte del código.
+Cómo trabajamos para que Sirio avance cada semana. El equipo inicial es de cuatro personas, con agentes de IA (Opus) haciendo la mayor parte del código.
 
 ## Roles
 
@@ -18,12 +18,16 @@ Fernando lleva dos roles al inicio. El primero que conviene delegar es la direcc
 
 ### Qué hacen los agentes
 
-| Trabajo | Quién lo hace |
+Todo el trabajo de agentes se hace con Opus, ajustando el nivel de esfuerzo a la complejidad de la tarea. Así hay un solo modelo que conocer y el costo se controla con el esfuerzo, no cambiando de modelo.
+
+| Trabajo | Nivel de esfuerzo |
 | --- | --- |
-| Escribir y mantener la especificación, partir el trabajo en issues | Un agente de dirección (Fable), con aprobación de Fernando |
-| Construir un issue y abrir su PR | Un agente constructor (Sonnet) por issue |
-| Investigar, analizar referencias, revisar documentación | Agentes ligeros (Haiku o Sonnet) |
-| Revisar un PR antes de la revisión humana | Un agente revisor distinto del que construyó |
+| Investigar, leer documentación, analizar referencias, cambios de texto o estilo | Bajo |
+| Construir un issue normal y abrir su PR; revisar un PR antes de la revisión humana | Medio |
+| Issues que tocan el agente, la memoria, la seguridad o varias partes a la vez | Alto |
+| Escribir y mantener la especificación, partir el trabajo en issues, decisiones de arquitectura | Alto o muy alto, con aprobación de Fernando |
+
+Quien lanza al agente elige el nivel al tomar el issue. Si un agente falla dos veces en el mismo issue, se sube un nivel antes de intentarlo de nuevo. El agente que revisa un PR es siempre una sesión distinta de la que lo construyó.
 
 Ningún agente fusiona a `main`, cambia variables de entorno de producción ni decide el alcance.
 
