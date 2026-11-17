@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import type { ComponentType } from "react";
 import { Activity, Building2, Clapperboard, Settings, SquarePen, Sun, Target } from "lucide-react";
 import { Boton } from "@/components/ui/boton";
@@ -57,20 +57,35 @@ function ItemSeccion({
   );
 }
 
+/** En Ajustes no hay panel de Sirio: abrir un hilo lleva a Hoy y lo abre ahí. */
+function useConPanel() {
+  const ruta = usePathname();
+  const router = useRouter();
+  const sinPanel = ruta.startsWith("/app/ajustes");
+  return {
+    sinPanel,
+    conPanel: (accion: () => void) => () => {
+      accion();
+      if (sinPanel) router.push("/app");
+    },
+  };
+}
+
 function ListaHilos() {
   const { hilos, hiloId, panelVisible, hilosTrabajando, abrirHilo, verTodosLosHilos } = useMaqueta();
+  const { sinPanel, conPanel } = useConPanel();
   return (
     <div className="mt-6 max-lg:hidden">
       <p className="etiqueta-grupo px-3">Hilos</p>
       <ul className="mt-2 space-y-0.5">
         {hilos.slice(0, HILOS_VISIBLES).map((h) => {
-          const abierto = panelVisible && h.id === hiloId;
+          const abierto = panelVisible && !sinPanel && h.id === hiloId;
           const trabajando = hilosTrabajando.has(h.id);
           return (
             <li key={h.id}>
               <button
                 type="button"
-                onClick={() => abrirHilo(h.id)}
+                onClick={conPanel(() => abrirHilo(h.id))}
                 aria-current={abierto ? "true" : undefined}
                 className={`flex h-8 w-full items-center gap-2 rounded-boton px-3 text-left text-[13px] transicion ${
                   abierto ? "bg-superficie-2 font-bold text-tinta" : "text-tinta-2 hover:bg-superficie-2 hover:text-tinta"
@@ -86,7 +101,7 @@ function ListaHilos() {
         })}
       </ul>
       <div className="mt-1 px-1">
-        <Boton variante="texto" onClick={verTodosLosHilos}>
+        <Boton variante="texto" onClick={conPanel(verTodosLosHilos)}>
           Ver todos
         </Boton>
       </div>
@@ -97,7 +112,8 @@ function ListaHilos() {
 /** Barra lateral: marca, espacio, nuevo hilo, secciones, hilos y pie. */
 export function BarraLateral() {
   const ruta = usePathname();
-  const { cola, porAprobar, nuevoHilo } = useMaqueta();
+  const { cola, porAprobar, nuevoHilo: crearHilo } = useMaqueta();
+  const nuevoHilo = useConPanel().conPanel(crearHilo);
   const contadores = { hoy: cola.length, contenido: porAprobar };
   const activa = (href: string) => (href === "/app" ? ruta === "/app" : ruta.startsWith(href));
 

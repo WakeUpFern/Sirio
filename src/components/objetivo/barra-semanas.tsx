@@ -34,7 +34,9 @@ export function BarraSemanas({
               Semana {n}
               {n < actual ? ", terminada" : n === actual ? ", en curso" : ""}
             </span>
-            <span aria-hidden="true">S{n}</span>
+            <span aria-hidden="true" className={n === actual ? "" : "max-sm:invisible"}>
+              S{n}
+            </span>
           </span>
         </li>
       ))}

@@ -53,7 +53,9 @@ export function Ficha() {
     <div className="space-y-4">
       <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-tinta-2">
         <Globe size={15} strokeWidth={1.75} className="text-tinta-3" aria-hidden="true" />
-        Salió de <span className="font-bold text-tinta">{fuente.fuente}</span>, leída el {fuente.leida}.
+        <span>
+          Salió de <span className="font-bold text-tinta">{fuente.fuente}</span>, leída el {fuente.leida}.
+        </span>
         <span className="text-tinta-3">
           Último cambio: {fuente.ultimoCambio.cuando}, por {fuente.ultimoCambio.quien}.
         </span>

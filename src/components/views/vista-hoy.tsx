@@ -33,7 +33,7 @@ export function VistaHoy() {
       }
     >
       <FranjaObjetivo />
-      <div className="mt-6 grid items-start gap-6 @min-[760px]:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div className="mt-6 grid items-start gap-6 @min-[760px]:grid-cols-[minmax(0,2fr)_minmax(264px,1fr)]">
         <ColaDecisiones />
         <div className="space-y-4">
           <HechoReciente />

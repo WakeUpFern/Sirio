@@ -86,7 +86,8 @@ export function useDecisiones({ registrar, avisar, escribirEnHilo }: Dependencia
         },
         ...ps,
       ]);
-      escribirEnHilo(undefined, `Necesito una pieza: ${descripcion}. Formato: ${formato}.`, titulo);
+      const pedido = descripcion.charAt(0).toLowerCase() + descripcion.slice(1);
+      escribirEnHilo(undefined, `Necesito una pieza: ${pedido}. Formato: ${formato}.`, titulo);
       registrar("redacto", `Empecé la pieza «${titulo}»`, { tipo: "pieza", id });
       return id;
     },

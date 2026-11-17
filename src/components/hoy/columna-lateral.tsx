@@ -23,8 +23,10 @@ export function HechoReciente() {
           {hoy.map((a) => (
             <li key={a.id} className="flex items-start gap-3">
               <IconoAccion tipo={a.tipo} />
-              <span className="min-w-0 flex-1 text-[13px] leading-snug">{a.texto}</span>
-              <span className="mono shrink-0 pt-0.5 text-tinta-3">{a.hora}</span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[13px] leading-snug">{a.texto}</span>
+                <span className="mono mt-0.5 block text-tinta-3">{a.hora}</span>
+              </span>
             </li>
           ))}
         </ul>

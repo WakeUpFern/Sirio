@@ -60,10 +60,11 @@ function Acciones({ pieza }: { pieza: Pieza }) {
       </Boton>
     );
   }
+  const hilo = pieza.hiloId;
   return (
     <>
-      {pieza.hiloId ? (
-        <Boton variante="contorno" icono={<MessageSquare {...ICONO} />} onClick={() => abrirHilo(pieza.hiloId!)}>
+      {hilo ? (
+        <Boton variante="contorno" icono={<MessageSquare {...ICONO} />} onClick={() => abrirHilo(hilo)}>
           Abrir el hilo
         </Boton>
       ) : (
@@ -97,6 +98,9 @@ export function DetallePieza({ pieza }: { pieza: Pieza }) {
           {pieza.sugerida ? ` · sugerida para el ${pieza.sugerida}` : ""}
         </p>
         <p className="mono mt-1 text-tinta-3">{pieza.decision ?? `Propuesta por Sirio · ${pieza.creada}`}</p>
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <Acciones pieza={pieza} />
+        </div>
       </header>
 
       <div className="grid gap-6 px-6 py-5 @min-[560px]:grid-cols-[188px_minmax(0,1fr)]">
@@ -122,10 +126,6 @@ export function DetallePieza({ pieza }: { pieza: Pieza }) {
           {NOTA[pieza.estado] ? <p className="text-[12.5px] text-tinta-3">{NOTA[pieza.estado]}</p> : null}
         </div>
       </div>
-
-      <footer className="flex flex-wrap items-center gap-2 border-t border-linea px-6 py-4">
-        <Acciones pieza={pieza} />
-      </footer>
     </Tarjeta>
   );
 }

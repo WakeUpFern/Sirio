@@ -70,35 +70,40 @@ export function VentanaProducto() {
               </span>
             </div>
 
-            <div className="mt-3 grid gap-3 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-              <div className="rounded-tarjeta border border-linea bg-superficie p-3">
-                <Etiqueta tono="atencion" forma="chip">
-                  Aprobar pieza
-                </Etiqueta>
-                <p className="mt-1.5 text-[12.5px] font-extrabold leading-snug">El intern y el deploy del viernes</p>
-                <p className="text-[11px] text-tinta-2">TikTok · Sketch vertical · 45 s</p>
-                <div className="mt-2.5 flex gap-2.5">
-                  <Miniatura pieza={{ titulo: "El intern y el deploy del viernes", canal: "TikTok" }} />
+            <div className="mt-3 rounded-tarjeta border border-linea bg-superficie p-3">
+              <Etiqueta tono="atencion" forma="chip">
+                Aprobar pieza
+              </Etiqueta>
+              <p className="mt-1.5 text-[12.5px] font-extrabold leading-snug">El intern y el deploy del viernes</p>
+              <p className="text-[11px] text-tinta-2">TikTok · Sketch vertical · 45 s</p>
+              <div className="mt-2.5 flex gap-3">
+                <Miniatura pieza={{ titulo: "El intern y el deploy del viernes", canal: "TikTok" }} />
+                <div className="min-w-0 flex-1">
                   <p className="text-[11px] leading-snug text-tinta-2">
                     Viernes, 4:55 p. m. Un intern, un botón de deploy y cero fe en el equipo.
                   </p>
-                </div>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  <Boton variante="solido">Aprobar</Boton>
-                  <Boton variante="texto">Descartar</Boton>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    <Boton variante="solido">Aprobar</Boton>
+                    <Boton variante="contorno">Pedir otra versión</Boton>
+                  </div>
                 </div>
               </div>
-              <div className="hidden space-y-2 rounded-tarjeta border border-linea bg-superficie p-3 md:block">
-                <p className="text-[11.5px] font-extrabold">Hecho desde tu visita</p>
+            </div>
+
+            <div className="mt-3 hidden rounded-tarjeta border border-linea bg-superficie p-3 sm:block">
+              <p className="text-[11.5px] font-extrabold">Hecho desde tu última visita</p>
+              <div className="mt-2 grid grid-cols-3 gap-3">
                 {[
                   { tipo: "propuso" as const, texto: "Pasos de la semana 4", hora: "09:40" },
-                  { tipo: "pregunto" as const, texto: "Gancho del sketch del cliente", hora: "09:12" },
+                  { tipo: "pregunto" as const, texto: "Gancho del sketch", hora: "09:12" },
                   { tipo: "redacto" as const, texto: "Post de LinkedIn", hora: "08:31" },
                 ].map((a) => (
-                  <p key={a.hora} className="flex items-center gap-2 text-[11px] leading-tight">
+                  <p key={a.hora} className="flex items-start gap-2 text-[11px] leading-tight">
                     <IconoAccion tipo={a.tipo} />
-                    <span className="min-w-0 flex-1">{a.texto}</span>
-                    <span className="mono text-[10px] text-tinta-3">{a.hora}</span>
+                    <span className="min-w-0">
+                      <span className="block">{a.texto}</span>
+                      <span className="mono block text-[10px] text-tinta-3">{a.hora}</span>
+                    </span>
                   </p>
                 ))}
               </div>

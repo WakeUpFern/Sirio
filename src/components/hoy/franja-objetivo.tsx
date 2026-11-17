@@ -19,7 +19,7 @@ export function FranjaObjetivo() {
         </span>
         <span className="min-w-0">
           <span className="etiqueta-grupo block">Objetivo a 90 días</span>
-          <span className="block truncate text-[14px] font-extrabold tracking-[-0.01em]">{objetivo.frase}</span>
+          <span className="block text-[14px] leading-snug font-extrabold tracking-[-0.01em]">{objetivo.frase}</span>
         </span>
       </span>
       <span className="flex basis-[300px] items-center gap-5 max-sm:flex-1">

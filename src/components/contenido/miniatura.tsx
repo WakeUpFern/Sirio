@@ -5,7 +5,7 @@ export function Miniatura({ pieza, tamano = "lista" }: { pieza: Pick<Pieza, "tit
   if (tamano === "chica") {
     return (
       <span
-        className="relative block h-[64px] w-[38px] shrink-0 overflow-hidden rounded-chip border border-linea bg-superficie-2"
+        className="relative block h-[64px] w-[38px] shrink-0 self-start overflow-hidden rounded-chip border border-linea bg-superficie-2"
         aria-hidden="true"
       >
         <span className="absolute left-1.5 top-1.5 h-[3px] w-3 bg-acento" />
@@ -18,7 +18,7 @@ export function Miniatura({ pieza, tamano = "lista" }: { pieza: Pick<Pieza, "tit
   }
   return (
     <span
-      className="relative flex aspect-[9/16] w-[72px] shrink-0 flex-col justify-between overflow-hidden rounded-chip border border-linea bg-superficie-2 p-2"
+      className="relative flex aspect-[9/16] w-[72px] shrink-0 self-start flex-col justify-between overflow-hidden rounded-chip border border-linea bg-superficie-2 p-2"
       aria-hidden="true"
     >
       <span className="block h-[3px] w-4 bg-acento" />

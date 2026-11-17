@@ -48,7 +48,7 @@ export function Tarjeta({
       className={`transicion ${VARIANTE[variante]} ${RELLENO[relleno]} ${className}`}
     >
       {titulo ? (
-        <header className="mb-3 flex min-h-6 items-center justify-between gap-3">
+        <header className={`flex min-h-6 items-center justify-between gap-3 ${relleno === "ninguno" ? "px-5 py-3.5" : "mb-3"}`}>
           <h2 className="text-[14px] font-extrabold tracking-[-0.01em]">{titulo}</h2>
           {extra}
         </header>
