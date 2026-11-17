@@ -1,5 +1,7 @@
 # Sirio: dirección de la primera maqueta
 
+> **Documento histórico.** Describe la primera maqueta, que tomó como base la interfaz de Foundable. Ya no es la referencia de diseño: la sustituye [`sistema-diseno.md`](sistema-diseno.md). No construyas nada nuevo siguiendo este documento.
+
 Este documento es el encargo para quien construye la primera maqueta web de Sirio. Explica qué es el producto, a quién se le va a mostrar, cómo debe verse y qué pantallas lleva. Todo lo que no esté fijado aquí queda a tu criterio; cuando decidas algo, que sea coherente con la sección "Cómo debe sentirse".
 
 El análisis detallado de las capturas de referencia está en [`docs/referencias/analisis-capturas.md`](referencias/analisis-capturas.md). Léelo antes de empezar: ahí están las medidas, colores y componentes de Foundable que esta maqueta toma como base.
