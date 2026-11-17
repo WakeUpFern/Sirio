@@ -13,9 +13,20 @@ Antes de empezar un issue, lee lo que le corresponda:
 | [`docs/producto.md`](docs/producto.md) | Qué se construye, los flujos y lo que queda fuera de alcance |
 | [`docs/arquitectura.md`](docs/arquitectura.md) | Cómo está armado, el modelo de datos y las reglas de seguridad |
 | [`docs/decisiones.md`](docs/decisiones.md) | Decisiones ya tomadas. No las reabras en un PR |
-| [`docs/direccion-mockup.md`](docs/direccion-mockup.md) | Sistema visual. Obligatorio si tocas la interfaz |
+| [`docs/stack.md`](docs/stack.md) | Proveedores y librerías de cada capa |
+| [`docs/patrones.md`](docs/patrones.md) | Capas, qué puede hablar con qué y los patrones de backend y frontend |
+| [`docs/sistema-diseno.md`](docs/sistema-diseno.md) | Colores, tipografía, botones y movimiento. Obligatorio si tocas la interfaz |
 | [`docs/equipo.md`](docs/equipo.md) | Roles, ritmo y cuándo está terminado un issue |
 | [`docs/backlog.md`](docs/backlog.md) | Los issues de los hitos en curso |
+
+## Skills
+
+Hay dos skills en `.claude/skills`. Carga la que corresponda antes de empezar; si el issue toca ambas partes, carga las dos.
+
+| Skill | Cuándo |
+| --- | --- |
+| `sirio-frontend` | Cualquier cambio en `src/app` o `src/components` que afecte lo que se ve |
+| `sirio-backend` | Cualquier cambio en `src/server`, rutas, acciones de servidor o migraciones |
 
 ## Comandos
 
@@ -51,8 +62,9 @@ npm run build
 
 ## Reglas de la interfaz
 
-- Respeta los colores, la tipografía y las formas de `docs/direccion-mockup.md`. No agregues colores nuevos.
-- Nada de fondos negros con acentos eléctricos, degradados saturados ni resplandores.
+- Respeta los colores, la tipografía y las formas de `docs/sistema-diseno.md`. No agregues colores nuevos.
+- Nada de fondos negros, degradados saturados, resplandores, cielos ni paneles de vidrio.
+- No copies la interfaz de otro producto. La identidad sale de la marca FEBAcode.
 - No agregues librerías de componentes, de gráficas ni de diagramas sin que el issue lo pida.
 - Botones y enlaces reales, foco visible, contraste AA y `aria-label` en botones de solo icono.
 - Respeta `prefers-reduced-motion`.

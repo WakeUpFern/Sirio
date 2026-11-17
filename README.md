@@ -4,7 +4,7 @@ Sirio es un producto interno de FEBAcode: una interfaz web donde un agente de IA
 
 Este repositorio contiene la **primera maqueta web**: una portada pública (`/`) y la app (`/app`) con las vistas Inicio, Contenido, Operar y Ajustes. No hay backend, cuentas ni IA real. Todo son datos de ejemplo escritos en el código (`src/lib/data.ts`) y el estado vive en el cliente, así que se reinicia al recargar.
 
-La dirección de diseño está en [`docs/direccion-mockup.md`](docs/direccion-mockup.md).
+La maqueta se hizo siguiendo [`docs/direccion-mockup.md`](docs/direccion-mockup.md). El diseño vigente está en [`docs/sistema-diseno.md`](docs/sistema-diseno.md).
 
 ## Hacia la versión interna
 
@@ -14,6 +14,9 @@ El siguiente paso es convertir la maqueta en una versión interna que el equipo 
 | --- | --- |
 | [`docs/producto.md`](docs/producto.md) | Qué se construye, los flujos, lo que queda fuera y los hitos |
 | [`docs/arquitectura.md`](docs/arquitectura.md) | Piezas, modelo de datos y reglas de seguridad |
+| [`docs/stack.md`](docs/stack.md) | Proveedores y librerías de cada capa |
+| [`docs/patrones.md`](docs/patrones.md) | Capas y patrones de backend y frontend |
+| [`docs/sistema-diseno.md`](docs/sistema-diseno.md) | Sistema de diseño FEBAcode y su aplicación en Sirio |
 | [`docs/decisiones.md`](docs/decisiones.md) | Decisiones tomadas y su porqué |
 | [`docs/equipo.md`](docs/equipo.md) | Roles, ritmo semanal y cuándo está terminado un issue |
 | [`docs/backlog.md`](docs/backlog.md) | Issues de los dos primeros hitos |

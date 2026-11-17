@@ -10,7 +10,7 @@ Un rol es una responsabilidad, no un puesto. Una persona puede tener más de uno
 | --- | --- | --- |
 | Dirección de producto | Fernando | Qué entra a cada hito y en qué orden. Aprueba cambios a `producto.md` |
 | Responsable técnico | Fernando | Revisa y fusiona cada PR. Cuida la arquitectura y las decisiones. Es el único que fusiona a `main` |
-| Diseño | Por asignar | Cuida que lo nuevo respete `direccion-mockup.md`. Revisa cada PR que toca la interfaz |
+| Diseño | Por asignar | Cuida que lo nuevo respete `sistema-diseno.md`. Revisa cada PR que toca la interfaz |
 | Uso real | Por asignar (quien lleva el marketing de FEBA) | Usa Sirio cada semana con trabajo verdadero y reporta qué sirvió y qué no |
 | Construcción | Por asignar, con agentes | Toma issues, lanza agentes, revisa su resultado antes de pedir revisión |
 

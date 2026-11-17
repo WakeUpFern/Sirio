@@ -18,13 +18,13 @@ Agregar pruebas unitarias y GitHub Actions.
 
 Depende de: nada.
 
-### M0-2. Confirmar las piezas técnicas pendientes
+### M0-2. Confirmar límites y versiones del stack
 
-Investigación corta, sin código de producto.
+Investigación corta, sin código de producto. El stack ya está elegido en `stack.md`; aquí se confirma lo que quedó abierto.
 
-- Se confirma en documentación oficial: soporte de MCP y licencia de Vercel AI SDK, límites de duración de funciones y de Vercel Cron.
-- Se elige proveedor de Postgres, ORM y librería de cuentas, comparando a lo más dos opciones de cada uno.
-- El resultado queda en `decisiones.md` y `arquitectura.md` deja de decir "por confirmar" en esos puntos.
+- Se confirma en documentación oficial: plan de Vercel (uso comercial, frecuencia de Cron, duración máxima de funciones), versión, licencia y soporte de MCP de Vercel AI SDK.
+- Se decide si Better Auth va administrado por Neon o instalado en la app.
+- El resultado queda en `decisiones.md` y `stack.md` deja de tener la sección "Por confirmar".
 
 Depende de: nada.
 
@@ -67,6 +67,37 @@ La rebanada más delgada del agente, para probar el camino completo.
 
 Depende de: M0-5.
 
+### M0-7. Aplicar el sistema de diseño FEBAcode
+
+Cambia la piel de la maqueta sin cambiar su estructura.
+
+- Las variables de `sistema-diseno.md` sustituyen a las actuales en `globals.css`.
+- Manrope y DM Mono sustituyen a Hanken Grotesk y Geist Mono.
+- Existen los primitivos de `src/components/ui` con sus variantes: botón (cuatro variantes, dos tamaños, cinco estados), campo, tarjeta, etiqueta y diálogo.
+- Desaparecen el degradado de cielo, los paneles de vidrio, las píldoras en botones y pestañas, y los bloques pastel.
+- Ningún componente escribe un color, radio o duración directo.
+
+Depende de: M0-1.
+
+### M0-8. Proponer una estructura propia para la app
+
+Issue de diseño, sin código de producto.
+
+- Se presentan dos o tres opciones de disposición que no repitan la de Foundable: navegación, lugar del chat y vista Operar.
+- Cada opción se muestra como maqueta navegable o imágenes, con sus ventajas y costos.
+- Fernando elige una y se abre el issue para construirla.
+
+Depende de: M0-7.
+
+### M0-9. Estructura de carpetas y reglas de capas
+
+- Existen las carpetas de `patrones.md` con un ejemplo mínimo de cada capa.
+- `src/server` importa `server-only`.
+- ESLint impide importar `src/server` desde `src/components` y el cliente de la base fuera de `repositorios`; una prueba o un archivo de ejemplo demuestra que la regla falla cuando debe.
+- Existen los tipos `Contexto` y `Resultado`.
+
+Depende de: M0-3.
+
 ## M1. Sirio conoce el negocio
 
 Meta del hito: Sirio conversa con el equipo sabiendo qué es FEBAcode, y esa conversación se conserva.
@@ -97,6 +128,7 @@ Depende de: M0-4.
 Cubre parte de F2.
 
 - Herramienta de lectura que obtiene el texto de una página pública.
+- Si el sitio no se puede leer (bloquea lectores automáticos, exige sesión o no responde), Sirio lo dice y ofrece pegar el texto o describir el negocio. El sitio de FEBAcode es uno de esos casos.
 - A partir de una URL, Sirio propone una ficha completa con salida tipada.
 - El contenido de la página se entrega al modelo marcado como contenido externo.
 - La ficha propuesta se muestra para corregir y solo se guarda al confirmar.

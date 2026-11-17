@@ -25,15 +25,17 @@ No hay un servidor aparte ni procesos de larga duración en la versión interna.
 
 ## Piezas
 
-| Pieza | Elección | Estado |
-| --- | --- | --- |
-| Aplicación | Next.js con App Router y TypeScript, la misma base de la maqueta | Decidido |
-| Agente | Vercel AI SDK: bucle con herramientas, salida tipada y streaming al chat | Decidido. Soporte de MCP **por confirmar** |
-| Modelos | Claude por defecto, intercambiable por configuración; nunca un identificador de modelo escrito en el código | Decidido |
-| Base de datos | Postgres administrado, con migraciones versionadas en el repo | Proveedor y ORM **por confirmar** en M0 (propuesta: Neon y Drizzle) |
-| Cuentas | Inicio de sesión con Google y lista de correos permitidos | Librería **por confirmar** en M0 |
-| Trabajo programado | Tabla de trabajos en Postgres y Vercel Cron como reloj | Decidido para la versión interna |
-| Pruebas | Pruebas unitarias, una prueba de punta a punta por flujo y GitHub Actions como filtro de cada PR | Herramientas **por confirmar** en M0 (propuesta: Vitest y Playwright) |
+El detalle de proveedores y librerías está en [`stack.md`](stack.md), y la organización del código en capas en [`patrones.md`](patrones.md).
+
+| Pieza | Elección |
+| --- | --- |
+| Aplicación | Next.js con App Router y TypeScript, la misma base de la maqueta |
+| Agente | Vercel AI SDK: bucle con herramientas, salida tipada y streaming al chat |
+| Modelos | Claude, intercambiable por configuración; nunca un identificador de modelo escrito en el código |
+| Base de datos | Postgres en Neon, con Drizzle y migraciones versionadas en el repo |
+| Cuentas | Better Auth con Google y lista de correos permitidos |
+| Trabajo programado | Tabla de trabajos en Postgres y Vercel Cron como reloj |
+| Pruebas | Vitest, Playwright y GitHub Actions como filtro de cada PR |
 
 ## Modelo de datos
 
@@ -55,6 +57,7 @@ Todas las tablas llevan `espacio_id`, y toda consulta filtra por él. Es la regl
 | `tareas_programadas` | Qué corre, con qué horario, y si está pausada |
 | `trabajos` | Ejecuciones pendientes y terminadas de las tareas programadas |
 | `conexiones` | Cuentas externas conectadas y sus permisos. Vacía en la versión interna |
+| `llamadas` | Una fila por llamada al modelo: modelo, tokens de entrada, de caché y de salida, y el hilo |
 
 ## Cómo piensa Sirio en cada turno
 
@@ -111,5 +114,5 @@ La maqueta actual tiene la interfaz completa con datos de ejemplo en `src/lib/da
 ## Por confirmar antes de depender de ello
 
 - Soporte de MCP en la versión actual de Vercel AI SDK y su licencia.
-- Límites de duración de las funciones y de Vercel Cron en el plan que se use.
+- Límites de duración de las funciones y de Vercel Cron en el plan que se use, y si ese plan permite uso comercial.
 - Política de WhatsApp para bots de IA y requisitos de Google para Gmail y Calendar. No afectan a la versión interna, pero sí a lo que sigue.
