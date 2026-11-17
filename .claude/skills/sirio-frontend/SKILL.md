@@ -7,7 +7,7 @@ description: Reglas para construir o cambiar interfaz en Sirio y otros productos
 
 Úsala siempre que crees o cambies algo que se ve: páginas, componentes, estilos, textos de la interfaz.
 
-Fuentes de verdad, en este orden: `docs/sistema-diseno.md` (cómo se ve), `docs/patrones.md` sección "Patrones del frontend" (cómo se organiza) y `docs/producto.md` (qué hace). Si esta skill y esos documentos se contradicen, ganan los documentos; avisa en el PR.
+Fuentes de verdad, en este orden: `docs/sistema-diseno.md` (cómo se ve), `docs/estructura-app.md` (qué pantallas hay y qué muestra cada una), `docs/patrones.md` sección "Patrones del frontend" (cómo se organiza) y `docs/producto.md` (qué hace). Si esta skill y esos documentos se contradicen, ganan los documentos; avisa en el PR.
 
 ## Antes de escribir
 

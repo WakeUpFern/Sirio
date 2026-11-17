@@ -137,8 +137,8 @@ Contrastes medidos: tinta sobre fondo 15.2, tinta 2 sobre blanco 8.0, tinta 3 so
 | Hanken Grotesk y Geist Mono | Manrope y DM Mono |
 | Tinta `#0B1220`, sin acento | Tinta `#1A1F36` y acento cian |
 | Bloques pastel lila, menta y durazno en la portada | Superficies neutras con detalles en acento |
-| Estructura de pestañas Inicio, Contenido y Operar calcada de Home, Build y Run | Se revisa en un issue aparte; ver abajo |
+| Estructura de pestañas Inicio, Contenido y Operar calcada de Home, Build y Run | Barra lateral con Hoy, Objetivo, Contenido, Actividad y Negocio; ver [`estructura-app.md`](estructura-app.md) |
 
-### Pendiente: la estructura
+### La estructura
 
-Cambiar colores y formas no basta si la disposición de la pantalla sigue siendo la de Foundable: barra superior con pestañas centradas, chat a la izquierda y un lienzo con el taller al centro. La propuesta es pasar a una navegación lateral propia y replantear la vista Operar, pero eso es una decisión de producto que requiere ver opciones. Está en el backlog como issue de diseño y no se resuelve en este documento.
+La disposición de las pantallas también dejó de seguir a Foundable. Está definida en [`estructura-app.md`](estructura-app.md): barra lateral con cinco secciones, panel de Sirio a la derecha y vistas que salen de la promesa del producto.

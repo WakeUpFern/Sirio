@@ -18,5 +18,6 @@ Cada decisión que ya se tomó, con su porqué, para no volver a discutirla sin 
 | D12 | 2026-11-16 | El acento de Sirio es el cian del logo (`#00BFD8`) | No compite con los colores de error y atención, y es el color de la estrella. El coral queda para el sitio de FEBAcode | Propuesto en este PR |
 | D13 | 2026-11-16 | Base de datos en Neon con Drizzle, cuentas con Better Auth, pruebas con Vitest y Playwright | Pocas piezas, sin servidor propio, y una copia de la base por PR | Propuesto en este PR |
 | D14 | 2026-11-16 | El código se organiza en capas: entrada, servicios, repositorios; el agente usa servicios | Contiene los errores en una capa y hace que el trabajo de muchos agentes sea uniforme | Propuesto en este PR |
+| D15 | 2026-11-17 | La app se organiza en barra lateral con Hoy, Objetivo, Contenido, Actividad y Negocio, y el panel de Sirio a la derecha | La disposición anterior repetía la de Foundable. La nueva sale de la promesa de `producto.md` | Pedido por Fernando; el detalle es propuesta de Fable |
 
 "Recomendado, sin objeción" significa que se propuso en el documento de dirección y nadie lo ha cuestionado. Si alguien no está de acuerdo, este es el lugar para decirlo.

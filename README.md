@@ -17,6 +17,7 @@ El siguiente paso es convertir la maqueta en una versión interna que el equipo 
 | [`docs/stack.md`](docs/stack.md) | Proveedores y librerías de cada capa |
 | [`docs/patrones.md`](docs/patrones.md) | Capas y patrones de backend y frontend |
 | [`docs/sistema-diseno.md`](docs/sistema-diseno.md) | Sistema de diseño FEBAcode y su aplicación en Sirio |
+| [`docs/estructura-app.md`](docs/estructura-app.md) | Pantallas, navegación y contenido de cada vista |
 | [`docs/decisiones.md`](docs/decisiones.md) | Decisiones tomadas y su porqué |
 | [`docs/equipo.md`](docs/equipo.md) | Roles, ritmo semanal y cuándo está terminado un issue |
 | [`docs/backlog.md`](docs/backlog.md) | Issues de los dos primeros hitos |
