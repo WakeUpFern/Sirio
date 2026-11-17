@@ -1,10 +1,10 @@
 # Sirio
 
-Sirio es un producto interno de FEBAcode: una interfaz web donde un agente de IA actúa como director de marketing (CMO) con su propio equipo de agentes. Propone ideas y guiones, edita video, publica en redes, promociona, busca colaboraciones y responde a clientes. El equipo humano ve todo lo que hace y aprueba lo que sale al público.
+Sirio es el operador de marketing de un negocio: conoce el negocio, acuerda un objetivo a 90 días con su dueño y trabaja hacia él, pidiendo aprobación en todo lo que sale al público. La primera versión es interna, para FEBAcode.
 
-Este repositorio contiene la **primera maqueta web**: una portada pública (`/`) y la app (`/app`) con las vistas Inicio, Contenido, Operar y Ajustes. No hay backend, cuentas ni IA real. Todo son datos de ejemplo escritos en el código (`src/lib/data.ts`) y el estado vive en el cliente, así que se reinicia al recargar.
+Este repositorio contiene la **maqueta web**: una portada pública (`/`) y la app (`/app`) con las vistas Hoy, Objetivo, Contenido, Actividad, Negocio y Ajustes, más el panel de Sirio a la derecha. No hay backend, cuentas ni IA real. Todo son datos de ejemplo escritos en el código (`src/lib/data.ts`, `src/lib/data-actividad.ts` y `src/lib/data-hilos.ts`) y el estado vive en el cliente (`src/lib/store.tsx` y `src/lib/estado`), así que se reinicia al recargar.
 
-La maqueta se hizo siguiendo [`docs/direccion-mockup.md`](docs/direccion-mockup.md). El diseño vigente está en [`docs/sistema-diseno.md`](docs/sistema-diseno.md).
+La interfaz sigue el sistema de diseño FEBAcode ([`docs/sistema-diseno.md`](docs/sistema-diseno.md)) y la estructura de [`docs/estructura-app.md`](docs/estructura-app.md).
 
 ## Hacia la versión interna
 
@@ -45,10 +45,13 @@ npm run lint     # ESLint
 | Ruta | Qué es |
 | --- | --- |
 | `/` | Portada pública |
-| `/app` | Inicio: estado de Sirio, pendientes, pasos, alcance y resultados |
-| `/app/contenido` | Biblioteca de publicaciones con vista previa en teléfono |
-| `/app/operar` | Taller de Sirio: actividad en vivo y equipo de agentes |
-| `/app/ajustes` | Integraciones, modelos y llaves, autonomía |
+| `/app` | Hoy: lo que Sirio necesita de ti, lo que hizo desde tu última visita, los pasos de la semana y los resultados |
+| `/app/objetivo` | El objetivo a 90 días, sus semanas, los pasos de esta semana y la propuesta para la siguiente |
+| `/app/contenido` | Piezas por aprobar, aprobadas, en guion y descartadas, con vista previa y guion |
+| `/app/actividad` | Bitácora de Sirio por día y tabla de trabajo programado |
+| `/app/negocio` | Ficha del negocio editable y memoria de Sirio |
+| `/app/ajustes` | Equipo, modelos y llaves, autonomía, notificaciones e integraciones |
+| `/app/operar` | Redirige a `/app/actividad` (la vista Operar ya no existe) |
 
 ## Desplegar en Vercel
 
@@ -58,7 +61,8 @@ npm run lint     # ESLint
 
 ## Notas técnicas
 
-- Next.js (App Router), TypeScript y Tailwind CSS v4. Las fuentes (Hanken Grotesk y Geist Mono) vienen de `@fontsource-variable`, así que el build no descarga nada.
-- Iconos con `lucide-react`; logotipos de apps con `react-icons`.
-- El estado del chat, las aprobaciones y la ejecución de Operar se comparte entre vistas con un contexto en `src/lib/store.tsx`.
-- La gráfica y el lienzo de Operar están dibujados con SVG y CSS, sin librerías.
+- Next.js (App Router), React, TypeScript y Tailwind CSS v4. Las variables del sistema de diseño están en `src/app/globals.css` y se exponen a Tailwind con `@theme`; la paleta y los radios por omisión de Tailwind están desactivados.
+- Fuentes Manrope y DM Mono instaladas como paquetes de `@fontsource`, así que el build no descarga nada.
+- Primitivos en `src/components/ui`, componentes de dominio en `src/components/<dominio>` y vistas en `src/components/views`.
+- Pestaña, filtro y elemento seleccionado viven en la URL.
+- Iconos con `lucide-react`. Lo demás (barras de avance, marco de teléfono, ventana de la portada) está dibujado con CSS, sin librerías.
