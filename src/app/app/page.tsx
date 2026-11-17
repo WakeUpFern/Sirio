@@ -1,5 +1,5 @@
-import { HomeView } from "@/components/views/HomeView";
+import { VistaHoy } from "@/components/views/vista-hoy";
 
 export default function Page() {
-  return <HomeView />;
+  return <VistaHoy />;
 }

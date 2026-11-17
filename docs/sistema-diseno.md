@@ -31,9 +31,10 @@ Reglas de uso:
 1. **Un acento por producto.** Cada producto elige cian o coral como acento y usa el otro solo en el logo de FEBAcode. Nunca los dos como relleno grande en la misma pantalla.
 2. **El acento es escaso.** Ocupa como mucho una décima parte de la pantalla: la acción principal, el elemento activo, un subrayado. Si todo está en acento, nada destaca.
 3. **El texto es tinta, nunca negro puro.** Los grises del texto son la tinta aclarada, no gris neutro.
-4. **El texto sobre acento es tinta.** El blanco sobre cian tiene un contraste de 2.2 y sobre coral de 3.2; ninguno alcanza el mínimo de 4.5. La tinta sobre cian da 7.3 y sobre coral 5.2.
-5. **Los estados tienen sus propios colores** (hecho, atención, error) y no se usan como decoración.
-6. **Sin degradados saturados, sin resplandores, sin fondos negros.** El modo oscuro, cuando exista, usa la tinta como fondo.
+4. **El foco y los controles encendidos usan el acento de texto.** El anillo de foco y el interruptor encendido necesitan un contraste de 3 contra el fondo, y el cian puro sobre blanco da 2.2. Se usa la versión oscura del acento.
+5. **El texto sobre acento es tinta.** El blanco sobre cian tiene un contraste de 2.2 y sobre coral de 3.2; ninguno alcanza el mínimo de 4.5. La tinta sobre cian da 7.3 y sobre coral 5.2.
+6. **Los estados tienen sus propios colores** (hecho, atención, error) y no se usan como decoración.
+7. **Sin degradados saturados, sin resplandores, sin fondos negros.** El modo oscuro, cuando exista, usa la tinta como fondo.
 
 ### Tipografía
 
@@ -51,9 +52,11 @@ Las fuentes se instalan como paquetes (`@fontsource-variable/manrope`, `@fontsou
 | Botones y campos | 14 px |
 | Tarjetas y paneles | 16 px |
 | Ventanas, diálogos y marcos grandes | 20 px |
-| Etiquetas y chips pequeños | 8 px |
+| Etiquetas, chips pequeños y elementos dentro de un control (una pestaña dentro de su barra) | 8 px |
 
 Los botones no son píldoras. La píldora completa queda reservada para etiquetas de estado y contadores. Los bordes son de 1 px en color de línea. Las sombras son casi invisibles y solo en lo que flota.
+
+Hay tres sombras, todas derivadas de la tinta: reposo (`0 1px 2px` al 8 %), alzada para el botón con el cursor encima, y flota para diálogos y avisos. El velo detrás de un diálogo es tinta al 32 %.
 
 ### Botones
 
@@ -66,7 +69,7 @@ Hay cuatro variantes y ninguna más.
 | Contorno | Transparente con borde de línea | Tinta | Acciones secundarias |
 | Texto | Transparente | Tinta, subrayado en acento al pasar el cursor | Acciones de baja jerarquía y enlaces |
 
-Tamaños: 36 px de alto dentro de la app, 44 px en portadas y diálogos. Peso 700. Los botones de solo icono son cuadrados con el mismo radio.
+Tamaños: 36 px de alto dentro de la app, 44 px en portadas y diálogos. En filas densas se usa la variante texto, que no tiene alto mínimo. Peso 700. Los botones de solo icono son cuadrados con el mismo radio.
 
 ### Movimiento de los botones
 
@@ -74,7 +77,7 @@ Tamaños: 36 px de alto dentro de la app, 44 px en portadas y diálogos. Peso 70
 | --- | --- | --- |
 | Cursor encima | Sube 1 px y su sombra crece | 150 ms |
 | Presionado | Vuelve a su sitio y se encoge a 0.98 | 80 ms |
-| Foco con teclado | Anillo de 2 px en acento, separado 2 px | Inmediato |
+| Foco con teclado | Anillo de 2 px en acento de texto, separado 2 px | Inmediato |
 | Cargando | El texto se sustituye por un indicador; el ancho no cambia | Hasta terminar |
 | Deshabilitado | Opacidad al 50 %, sin sombra ni movimiento | No aplica |
 
@@ -137,8 +140,8 @@ Contrastes medidos: tinta sobre fondo 15.2, tinta 2 sobre blanco 8.0, tinta 3 so
 | Hanken Grotesk y Geist Mono | Manrope y DM Mono |
 | Tinta `#0B1220`, sin acento | Tinta `#1A1F36` y acento cian |
 | Bloques pastel lila, menta y durazno en la portada | Superficies neutras con detalles en acento |
-| Estructura de pestañas Inicio, Contenido y Operar calcada de Home, Build y Run | Se revisa en un issue aparte; ver abajo |
+| Estructura de pestañas Inicio, Contenido y Operar calcada de Home, Build y Run | Barra lateral con Hoy, Objetivo, Contenido, Actividad y Negocio; ver [`estructura-app.md`](estructura-app.md) |
 
-### Pendiente: la estructura
+### La estructura
 
-Cambiar colores y formas no basta si la disposición de la pantalla sigue siendo la de Foundable: barra superior con pestañas centradas, chat a la izquierda y un lienzo con el taller al centro. La propuesta es pasar a una navegación lateral propia y replantear la vista Operar, pero eso es una decisión de producto que requiere ver opciones. Está en el backlog como issue de diseño y no se resuelve en este documento.
+La disposición de las pantallas también dejó de seguir a Foundable. Está definida en [`estructura-app.md`](estructura-app.md): barra lateral con cinco secciones, panel de Sirio a la derecha y vistas que salen de la promesa del producto.

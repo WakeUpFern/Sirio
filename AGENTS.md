@@ -16,6 +16,7 @@ Antes de empezar un issue, lee lo que le corresponda:
 | [`docs/stack.md`](docs/stack.md) | Proveedores y librerías de cada capa |
 | [`docs/patrones.md`](docs/patrones.md) | Capas, qué puede hablar con qué y los patrones de backend y frontend |
 | [`docs/sistema-diseno.md`](docs/sistema-diseno.md) | Colores, tipografía, botones y movimiento. Obligatorio si tocas la interfaz |
+| [`docs/estructura-app.md`](docs/estructura-app.md) | Qué pantallas hay, cómo se navega y qué muestra cada una |
 | [`docs/equipo.md`](docs/equipo.md) | Roles, ritmo y cuándo está terminado un issue |
 | [`docs/backlog.md`](docs/backlog.md) | Los issues de los hitos en curso |
 

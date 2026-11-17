@@ -67,27 +67,9 @@ La rebanada más delgada del agente, para probar el camino completo.
 
 Depende de: M0-5.
 
-### M0-7. Aplicar el sistema de diseño FEBAcode
+### M0-7 y M0-8. Sistema de diseño y estructura propia
 
-Cambia la piel de la maqueta sin cambiar su estructura.
-
-- Las variables de `sistema-diseno.md` sustituyen a las actuales en `globals.css`.
-- Manrope y DM Mono sustituyen a Hanken Grotesk y Geist Mono.
-- Existen los primitivos de `src/components/ui` con sus variantes: botón (cuatro variantes, dos tamaños, cinco estados), campo, tarjeta, etiqueta y diálogo.
-- Desaparecen el degradado de cielo, los paneles de vidrio, las píldoras en botones y pestañas, y los bloques pastel.
-- Ningún componente escribe un color, radio o duración directo.
-
-Depende de: M0-1.
-
-### M0-8. Proponer una estructura propia para la app
-
-Issue de diseño, sin código de producto.
-
-- Se presentan dos o tres opciones de disposición que no repitan la de Foundable: navegación, lugar del chat y vista Operar.
-- Cada opción se muestra como maqueta navegable o imágenes, con sus ventajas y costos.
-- Fernando elige una y se abre el issue para construirla.
-
-Depende de: M0-7.
+Hechos. La maqueta ya usa el sistema de diseño FEBAcode y la estructura de [`estructura-app.md`](estructura-app.md), decidida en D15.
 
 ### M0-9. Estructura de carpetas y reglas de capas
 
@@ -109,16 +91,16 @@ Cubre parte de F3.
 - Tablas `hilos` y `mensajes`.
 - Crear, renombrar, archivar y reabrir un hilo.
 - Al recargar, el hilo y su historial siguen ahí.
-- El historial de hilos de la columna de chat muestra hilos reales.
+- La lista de hilos de la barra lateral muestra hilos reales.
 
 Depende de: M0-6.
 
-### M1-2. Ficha del negocio en Ajustes
+### M1-2. Ficha del negocio con datos reales
 
 Cubre parte de F2.
 
 - Tabla `fichas` con historial de cambios.
-- Sección Negocio, General de Ajustes: ver y editar qué vende, a quién, tono, canales y diferenciadores.
+- Pestaña Ficha de la sección Negocio: ver y editar qué vende, a quién, tono, canales y diferenciadores, con datos reales.
 - Cada cambio guarda quién lo hizo y cuándo.
 
 Depende de: M0-4.
@@ -166,7 +148,7 @@ Cubre parte de F3.
 
 - Tabla `memoria`.
 - Al archivar un hilo, Sirio propone notas para guardar y la persona confirma, edita o descarta.
-- Sección de Ajustes para ver, editar y borrar notas, con el hilo del que salió cada una.
+- Pestaña Memoria de la sección Negocio para ver, editar y borrar notas, con el hilo del que salió cada una.
 - Las notas confirmadas entran al contexto de los hilos nuevos.
 
 Depende de: M1-5.

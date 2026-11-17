@@ -11,7 +11,7 @@ Navegador
    |  chat en streaming, panel, aprobaciones
    v
 Next.js (App Router) en Vercel
-   |-- Interfaz: Inicio, Contenido, Operar, Ajustes, chat
+   |-- Interfaz: Hoy, Objetivo, Contenido, Actividad, Negocio, panel de Sirio
    |-- Rutas de servidor: chat, hilos, ficha, objetivos, aprobaciones
    |-- Agente: bucle de Vercel AI SDK + herramientas de Sirio
    |-- Programador: Vercel Cron despierta un endpoint que toma trabajos pendientes
@@ -53,7 +53,7 @@ Todas las tablas llevan `espacio_id`, y toda consulta filtra por él. Es la regl
 | `mensajes` | Mensajes de un hilo, incluidos los pasos y las llamadas a herramientas |
 | `piezas` | Contenido que Sirio propone: idea, guion, texto de publicación, con estado |
 | `aprobaciones` | Qué se pidió aprobar, quién respondió, qué decidió y cuándo |
-| `acciones` | Registro de todo lo que Sirio hace. Alimenta Operar e Inicio. Solo se agrega, nunca se edita |
+| `acciones` | Registro de todo lo que Sirio hace. Alimenta Actividad y Hoy. Solo se agrega, nunca se edita |
 | `tareas_programadas` | Qué corre, con qué horario, y si está pausada |
 | `trabajos` | Ejecuciones pendientes y terminadas de las tareas programadas |
 | `conexiones` | Cuentas externas conectadas y sus permisos. Vacía en la versión interna |
