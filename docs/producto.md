@@ -39,7 +39,7 @@ La primera vez, Sirio pide una fuente (el sitio o una red social), redacta la fi
 - La ficha se muestra para corregir antes de guardarse.
 - Las tres preguntas son: negocio o marca personal, objetivo de los próximos 90 días y nivel de autonomía.
 - Las preguntas aparecen como tarjetas dentro del chat y se pueden omitir.
-- La ficha queda en Ajustes, Negocio, y cualquier miembro puede editarla.
+- La ficha queda en la sección Negocio, y cualquier miembro puede editarla.
 
 ### F3. Conversar en hilos
 
@@ -57,7 +57,7 @@ El objetivo a 90 días se convierte en pasos semanales.
 
 - Hay un solo objetivo vigente por espacio, con fecha y una medida de éxito.
 - Sirio propone los pasos de la semana; el usuario los acepta, cambia o descarta.
-- La tarjeta "Tus próximos pasos" de Inicio muestra esos pasos con su estado real.
+- La sección Objetivo y la tarjeta "Esta semana" de Hoy muestran esos pasos con su estado real.
 
 ### F5. Trabajo programado
 
@@ -65,7 +65,7 @@ Sirio trabaja sin que le escriban.
 
 - Hay al menos dos tareas programadas: resumen de la mañana y revisión semanal del objetivo.
 - El usuario ve cada tarea, su horario y su última ejecución, y puede pausarla.
-- Cada ejecución abre su propio hilo y deja su resultado en Inicio.
+- Cada ejecución abre su propio hilo y deja su resultado en Hoy.
 
 ### F6. Contenido con aprobación
 
@@ -81,7 +81,7 @@ Sirio propone ideas y guiones, y nada se da por bueno sin una persona.
 Todo lo que Sirio hace queda a la vista.
 
 - Cada acción (leyó, redactó, propuso, preguntó, programó) se registra con hora, hilo y resultado.
-- La vista Operar y la franja de estado de Inicio muestran ese registro, no datos de ejemplo.
+- La vista Actividad y la línea de estado de Hoy muestran ese registro, no datos de ejemplo.
 
 ## Fuera de alcance
 

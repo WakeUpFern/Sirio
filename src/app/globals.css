@@ -134,7 +134,7 @@ body {
 
 /* Foco con teclado: anillo de 2 px en acento, separado 2 px, inmediato. */
 :focus-visible {
-  outline: 2px solid var(--acento);
+  outline: 2px solid var(--acento-texto);
   outline-offset: 2px;
 }
 

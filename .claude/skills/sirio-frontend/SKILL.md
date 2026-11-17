@@ -53,7 +53,7 @@ Cuatro variantes: principal (fondo acento, texto tinta, una por vista), sólido 
 | --- | --- |
 | Cursor encima | Sube 1 px y la sombra crece, 150 ms |
 | Presionado | Vuelve a su sitio y escala a 0.98, 80 ms |
-| Foco con teclado | Anillo de 2 px en acento, separado 2 px |
+| Foco con teclado | Anillo de 2 px en `--acento-texto`, separado 2 px |
 | Cargando | Indicador en lugar del texto, sin cambiar el ancho |
 | Deshabilitado | Opacidad 50 %, sin sombra ni movimiento |
 
