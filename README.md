@@ -6,6 +6,19 @@ Este repositorio contiene la **primera maqueta web**: una portada pública (`/`)
 
 La dirección de diseño está en [`docs/direccion-mockup.md`](docs/direccion-mockup.md).
 
+## Hacia la versión interna
+
+El siguiente paso es convertir la maqueta en una versión interna que el equipo de FEBAcode use de verdad. Estos documentos lo definen:
+
+| Documento | Qué contiene |
+| --- | --- |
+| [`docs/producto.md`](docs/producto.md) | Qué se construye, los flujos, lo que queda fuera y los hitos |
+| [`docs/arquitectura.md`](docs/arquitectura.md) | Piezas, modelo de datos y reglas de seguridad |
+| [`docs/decisiones.md`](docs/decisiones.md) | Decisiones tomadas y su porqué |
+| [`docs/equipo.md`](docs/equipo.md) | Roles, ritmo semanal y cuándo está terminado un issue |
+| [`docs/backlog.md`](docs/backlog.md) | Issues de los dos primeros hitos |
+| [`AGENTS.md`](AGENTS.md) | Reglas para agentes y personas que escriben código aquí |
+
 ## Correr la maqueta
 
 Requiere Node.js 20 o superior.
